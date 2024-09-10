@@ -38,6 +38,7 @@ export default function MovieCast() {
               width="250px"
             />
             <p>{cast.name}</p>
+            <p>Character: {cast.character}</p>
           </li>
         ))}
       </ul>

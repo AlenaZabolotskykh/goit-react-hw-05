@@ -49,7 +49,7 @@ export default function MovieDetailsPage() {
               </li>
             ))}
           </ul>
-          <h2>Edditional information</h2>
+          <h2>Additional information</h2>
           <ul>
             <li>
               <NavLink to="cast">Cast</NavLink>
