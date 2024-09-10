@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTrendMovies } from "../../API/trendingApi";
+import { getTrendMovies } from "../../API/TrendMovies";
 import { Link } from "react-router-dom";
 import Error from "../../Components/Error/Error";
 import Loader from "../../Components/Loader/Loader";
