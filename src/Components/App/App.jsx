@@ -2,7 +2,7 @@ import "./App.css";
 import { Suspense, useState } from "react";
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import Navigation from "../Navigation/Navigation";
+import Navigation from "../../components/Navigation/Navigation";
 // import HomePage from "../../Pages/HomePage/HomePage";
 // import MoviesPage from "../../Pages/MoviesPage/MoviesPage";
 // import MovieDetailsPage from "../../Pages/MovieDetailsPage/MovieDetailsPage";
