@@ -10,7 +10,6 @@ export default function MoviesPage() {
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
   const [params] = useSearchParams();
   const query = params.get("query");
 

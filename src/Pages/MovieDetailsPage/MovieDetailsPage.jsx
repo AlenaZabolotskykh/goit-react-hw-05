@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getDetailsMovie } from "../../API/DetailsMovie";
@@ -62,7 +62,9 @@ export default function MovieDetailsPage() {
               <NavLink to="reviews">Reviews</NavLink>
             </li>
           </ul>
-          <Outlet />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
         </div>
       )}
     </div>
