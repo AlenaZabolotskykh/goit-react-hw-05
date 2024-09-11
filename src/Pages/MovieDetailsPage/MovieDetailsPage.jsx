@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getDetailsMovie } from "../../API/DetailsMovie";
 import Loader from "../../Components/Loader/Loader";
 import Error from "../../Components/Error/Error";
+import css from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -31,30 +32,34 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   return (
-    <div>
+    <>
       {loading && <Loader />}
       {error && <Error />}
       <Link to={backLinkRef.current}>Go back</Link>
       {movie && (
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-            alt={movie.title}
-            width="300px"
-          />
-          <h1>{movie.title}</h1>
-          <h2>Overview</h2>
-          <p>{movie.overview}</p>
-          <h2>Genres</h2>
-          <ul>
-            {movie.genres.map((genre) => (
-              <li key={genre.id}>
-                <p>{genre.name}</p>
-              </li>
-            ))}
-          </ul>
+        <div className={css.container}>
+          <div className={css.imgwrap}>
+            <img
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              alt={movie.title}
+              width="300px"
+            />
+          </div>
+          <div className={css.textwrap}>
+            <h1>{movie.title}</h1>
+            <h2>Overview</h2>
+            <p>{movie.overview}</p>
+            <h2>Genres</h2>
+            <ul className={css.list}>
+              {movie.genres.map((genre) => (
+                <li key={genre.id}>
+                  <p>{genre.name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
           <h2>Additional information</h2>
-          <ul>
+          <ul className={css.list}>
             <li>
               <NavLink to="cast">Cast</NavLink>
             </li>
@@ -67,6 +72,6 @@ export default function MovieDetailsPage() {
           </Suspense>
         </div>
       )}
-    </div>
+    </>
   );
 }

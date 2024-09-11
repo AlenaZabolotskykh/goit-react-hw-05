@@ -3,6 +3,7 @@ import { getCastMovie } from "../../API/CastMovie";
 import { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
+import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
   const [casts, setCasts] = useState([]);
@@ -29,7 +30,7 @@ export default function MovieCast() {
     <>
       {loading && <Loader />}
       {error && <Error />}
-      <ul>
+      <ul className={css.list}>
         {casts.map((cast) => (
           <li key={cast.id}>
             <img

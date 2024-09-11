@@ -3,6 +3,7 @@ import { getReviewMovie } from "../../API/ReviewsMovie";
 import { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
+import css from "./MovieReviews.module.css";
 
 export default function MovieReviews() {
   const [reviews, setReviews] = useState([]);
@@ -29,7 +30,7 @@ export default function MovieReviews() {
     <>
       {loading && <Loader />}
       {error && <Error />}
-      <ul>
+      <ul className={css.list}>
         {reviews.map((review) => (
           <li key={review.id}>
             <p>Author: {review.author}</p>
