@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getDetailsMovie } from "../../API/DetailsMovie";
 import Loader from "../../Components/Loader/Loader";
@@ -10,6 +10,9 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const location = useLocation();
+  const backLinkRef = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     async function fetchData() {
@@ -31,8 +34,9 @@ export default function MovieDetailsPage() {
     <div>
       {loading && <Loader />}
       {error && <Error />}
+      <Link to={backLinkRef.current}>Go back</Link>
       {movie && (
-        <>
+        <div>
           <img
             src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             alt={movie.title}
@@ -59,7 +63,7 @@ export default function MovieDetailsPage() {
             </li>
           </ul>
           <Outlet />
-        </>
+        </div>
       )}
     </div>
   );
