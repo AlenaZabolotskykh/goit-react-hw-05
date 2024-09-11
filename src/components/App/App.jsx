@@ -10,13 +10,13 @@ import Navigation from "../../components/Navigation/Navigation";
 // import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
 // import MovieReviews from "../MovieReviews/MovieReviews";
 
-const HomePage = lazy(() => import("../../Pages/HomePage/HomePage"));
-const MoviesPage = lazy(() => import("../../Pages/MoviesPage/MoviesPage"));
+const HomePage = lazy(() => import("../../pages/HomePage"));
+const MoviesPage = lazy(() => import("../../pages/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
-  import("../../Pages/MovieDetailsPage/MovieDetailsPage")
+  import("../../pages/MovieDetailsPage/MovieDetailsPage")
 );
 const NotFoundPage = lazy(() =>
-  import("../../Pages/NotFoundPage/NotFoundPage")
+  import("../../pages/NotFoundPage/NotFoundPage")
 );
 const MovieCast = lazy(() => import("../MovieCast/MovieCast"));
 const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
