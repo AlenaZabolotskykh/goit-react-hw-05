@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getTrendMovies } from "../../API/TrendMovies";
-import { Link } from "react-router-dom";
 import Error from "../../Components/Error/Error";
 import Loader from "../../Components/Loader/Loader";
+import MovieList from "../../Components/MovieList/MovieList";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -30,13 +30,7 @@ export default function HomePage() {
       <h1>Tranding today</h1>
       {loading && <Loader />}
       {error && <Error />}
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <MovieList movies={movies} />
     </>
   );
 }

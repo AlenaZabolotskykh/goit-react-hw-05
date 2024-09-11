@@ -4,6 +4,7 @@ import SearchForm from "../../Components/SearchForm/SearchForm";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
 import Error from "../../Components/Error/Error";
+import MovieList from "../../Components/MovieList/MovieList";
 
 export default function MoviesPage() {
   const [movie, setMovie] = useState([]);
@@ -18,6 +19,7 @@ export default function MoviesPage() {
       return;
     }
     async function fetchData() {
+      setLoading(true);
       try {
         const data = await getSearchMovie(query);
         setMovie(data);
@@ -35,6 +37,7 @@ export default function MoviesPage() {
       <SearchForm />
       {loading && <Loader />}
       {error && <Error />}
+      {movie && <MovieList movies={movie} />}
     </>
   );
 }
