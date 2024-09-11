@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTrendMovies } from "../../components/Api/TrendMovies";
 import Error from "../../components/Error/Error";
 import Loader from "../../components/Loader/Loader";
-import MovieList from "../../Components/MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
