@@ -1,9 +1,9 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { getDetailsMovie } from "../../API/DetailsMovie";
-import Loader from "../../Components/Loader/Loader";
-import Error from "../../Components/Error/Error";
+import { getDetailsMovie } from "../../components/Api/DetailsMovie";
+import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Loader/Loader";
 import css from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {

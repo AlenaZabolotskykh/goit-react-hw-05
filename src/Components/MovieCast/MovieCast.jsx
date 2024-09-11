@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getCastMovie } from "../../API/CastMovie";
+import { getCastMovie } from "../../components/Api/CastMovie";
 import { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";

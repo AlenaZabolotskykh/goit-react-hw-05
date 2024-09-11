@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getTrendMovies } from "../../API/TrendMovies";
-import Error from "../../Components/Error/Error";
-import Loader from "../../Components/Loader/Loader";
+import { getTrendMovies } from "../../components/Api/TrendMovies";
+import Error from "../../components/Error/Error";
+import Loader from "../../components/Loader/Loader";
 import MovieList from "../../Components/MovieList/MovieList";
 
 export default function HomePage() {

@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { getReviewMovie } from "../../API/ReviewsMovie";
+import { getReviewMovie } from "../Api/ReviewsMovie";
 import { useEffect, useState } from "react";
-import Loader from "../Loader/Loader";
-import Error from "../Error/Error";
+import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Error/Error";
 import css from "./MovieReviews.module.css";
 
 export default function MovieReviews() {
